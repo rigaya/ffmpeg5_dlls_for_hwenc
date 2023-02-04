@@ -131,6 +131,7 @@ EXPORTS
     avio_seek_time
     avio_size
     avio_skip
+    avio_vprintf
     avio_w8
     avio_wb16
     avio_wb24

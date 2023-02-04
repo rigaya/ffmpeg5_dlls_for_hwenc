@@ -19,7 +19,13 @@
 #ifndef AVDEVICE_AVDEVICE_H
 #define AVDEVICE_AVDEVICE_H
 
+#include "version_major.h"
+#ifndef HAVE_AV_CONFIG_H
+/* When included as part of the ffmpeg build, only include the major version
+ * to avoid unnecessary rebuilds. When included externally, keep including
+ * the full version information. */
 #include "version.h"
+#endif
 
 /**
  * @file
@@ -488,7 +494,7 @@ int avdevice_list_devices(struct AVFormatContext *s, AVDeviceInfoList **device_l
 /**
  * Convenient function to free result of avdevice_list_devices().
  *
- * @param devices device list to be freed.
+ * @param device_list device list to be freed.
  */
 void avdevice_free_list_devices(AVDeviceInfoList **device_list);
 
